@@ -1,0 +1,31 @@
+<project name="StatParser">
+
+	<property name="src.dir" location="${basedir}/src" />
+	<property name="lib.dir" location="${basedir}/lib" />
+	<property name="antlr.lib" location="${lib.dir}/antlr-4.6-complete.jar" />
+	<property name="tcom.dir" location="${user.home}/Dropbox/tcom/2018-1/" />
+	<property name="grammar.dir" location="${tcom.dir}/Proyecto/src/tcom/bnf" />
+	<property name="bin.dir" location="${basedir}/bin" />
+	<property name="data.dir" location="${basedir}/data" />
+	<property name="proyecto.dir" location="${tcom.dir}/Proyecto/" />
+
+	<property name="data.file" value="if.stat"/>
+
+	
+	<path id="run.classpath">
+		<pathelement location="${bin.dir}" />
+		<pathelement location="${antlr.lib}" />
+		<pathelement location="${basedir}" />
+		<pathelement location="${data.dir}" />
+	</path>
+
+
+	<target name="runParser">
+		<java classname="tcom.stat.StatMain" fork="yes" >
+			<classpath refid="run.classpath" />
+			<arg value="${data.file}"/>
+		</java>
+	</target>
+
+
+</project>

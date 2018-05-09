@@ -1,0 +1,4 @@
+if a<b then
+   while not b do
+      stop 
+   

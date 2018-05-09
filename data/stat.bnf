@@ -1,0 +1,6 @@
+<stat> ::= 'if' <bool-exp> 'then' <stat> ['else' <stat>] |
+           'while' <bool-exp> 'do' <stat> |
+           'stop' | 'a' | 'b' ;
+<bool-exp> ::= ('a'|'b') <comp> <var> | 'not' <var> | '(' <bool-exp> ')';
+<var> ::= 'a' | 'b'
+<comp> ::= '<' | '>'
